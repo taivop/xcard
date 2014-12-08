@@ -1,10 +1,11 @@
 
-get_data
+
+-- http://book.realworldhaskell.org/read/using-typeclasses.html
+main
     = do
         sisu <- readFile "data.txt"
-        (reads sisu)::[(File, String)]
-        show (reads sisu)::[(File, String)]
-        
+        let f2 = (read sisu)::File
+        return f2
         
         
         
