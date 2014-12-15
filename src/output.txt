@@ -1,0 +1,11 @@
+GHCi, version 7.8.3: http://www.haskell.org/ghc/  :? for help
+Loading package ghc-prim ... linking ... done.
+Loading package integer-gmp ... linking ... done.
+Loading package base ... linking ... done.
+Prelude> :l kaardimang.hs
+[1 of 1] Compiling Main             ( kaardimang.hs, interpreted )
+Ok, modules loaded: Main.
+*Main> main
+Fail [("Boulderfist Ogre",6,MinionCard [] 6 7 False Nothing),("Elven Archer",4,M
+inionCard [OnPlay [Choose [] [Health Relative (-1)]]] 4 5 False Nothing),("Gnomi
+sh Inventor",4,MinionCard [OnPlay [DrawCard]] 2 4 False Nothing)]

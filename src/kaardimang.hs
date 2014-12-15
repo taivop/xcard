@@ -1,34 +1,27 @@
+
+
+-- http://book.realworldhaskell.org/read/using-typeclasses.html
+main
+    = do
+        sisu <- readFile "sample.xcards"
+        let f2 = (read sisu)::File
+        return f2
+        
+        
+        
+        
+        
+        
+        
 -- fail on list kolmikutest
 data File
-    = Name Cost CardType
+    = Fail [(String, Int, CardType)]
     deriving (Show, Read)
     
-data Name
-    = String
-    deriving (Show, Read)
-data Cost
-    = Cost Int
-    deriving (Show, Read)
-
 -- on kahte tüüpi kaarte: olendid ja loitsud
 data CardType
-    = MinionCard [Effect] Health Attack Taunt (Maybe MinionType)
+    = MinionCard [Effect] Int Int Bool (Maybe MinionType)
     | SpellCard [Effect]
-    deriving (Show, Read)
-
--- elupunktide arv    
-data Health
-    = Health Int
-    deriving (Show, Read)
-    
--- ründepunktide arv    
-data Attack
-    = Attack Int
-    deriving (Show, Read)
-
--- mõnitav olend
-data Taunt
-    = Bool
     deriving (Show, Read)
     
 -- olenditel võivad olla sellised tüübid    
@@ -53,9 +46,9 @@ data EventEffect
     deriving (Show, Read)
 
 data CreatureEffect
-    = CreatureEffectHealth Type Health                -- elupunktide muutmine
-    | CreatureEffectAttack Type Attack                -- ründepunktide muutmine
-    | CreatureEffectTaunt Taunt                       -- mõnituse muutmine
+    = Health Type Int                -- elupunktide muutmine
+    | Attack Type Int                -- ründepunktide muutmine
+    | Taunt Bool                     -- mõnituse muutmine
     deriving (Show, Read)
     
 -- muutuse tüüp
@@ -74,25 +67,3 @@ data Filter
     | Not [Filter]                      -- eitus
     | Any [Filter]                      -- disjunktsioon
     deriving (Show, Read)
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-               
-               
-               
-               
-               
-               
